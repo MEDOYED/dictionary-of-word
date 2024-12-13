@@ -1,6 +1,6 @@
 .header {
-  background-color: #82ffee;
-  opacity: 0.8;
+  background-color: var(--blue);
+  font-weight: 900;
   width: 100vw;
   position: relative;
   left: calc((100% - 100vw) / 2);
