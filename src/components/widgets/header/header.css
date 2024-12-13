@@ -1,0 +1,22 @@
+.header {
+  background-color: #82ffee;
+  opacity: 0.8;
+  width: 100vw;
+  position: relative;
+  left: calc((100% - 100vw) / 2);
+  padding: 10px 0;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 30px;
+}
+
+.header__nav-links {
+  display: flex;
+}
