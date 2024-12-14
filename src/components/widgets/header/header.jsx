@@ -11,12 +11,12 @@ const Header = () => {
           <nav className="header__nav">
             <ul className="header__nav-links">
               <li className="header__nav-link">
-                <a href="https://github.com/MEDOYED/dictionary-of-word">
+                <a href="https://github.com/MEDOYED/dictionary-of-word" target="_blank">
                   <img src={hithubIcon} alt="link to github" />
                 </a>
               </li>
               <li className="header__nav-link">
-                <a href="https://github.com/MEDOYED/dictionary-of-word">
+                <a href="https://github.com/MEDOYED/dictionary-of-word" target="_blank">
                   <img src={hithubIcon} alt="link to github" />
                 </a>
               </li>
