@@ -1,22 +1,25 @@
 import React from "react";
 import ReactDom from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+// import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 import App from "./components/app/App.jsx";
 import WordDescPage from "./components/pages/word-desc-page/word-desc-page.jsx";
-import HomePage from "./components/pages/homePage/home-page.jsx";
+// import HomePage from "./components/pages/homePage/home-page.jsx";
+import HomePage from "./components/pages/home-page/home-page.jsx";
 
 import "./main.css";
+import { useState } from "react";
 
 const root = document.getElementById("root");
 
 ReactDom.createRoot(root).render(
-  <BrowserRouter>
+  <Router>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/dog" element={<WordDescPage />} />
+        <Route index element={<HomePage />} />
+        <Route path="word/:word" element={<WordDescPage />} />
       </Route>
     </Routes>
-  </BrowserRouter>
+  </Router>
 );
