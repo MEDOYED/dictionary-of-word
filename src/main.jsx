@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDom from "react-dom/client";
-// import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 
 import App from "./components/app/App.jsx";
 import WordDescPage from "./components/pages/word-desc-page/word-desc-page.jsx";
-// import HomePage from "./components/pages/homePage/home-page.jsx";
 import HomePage from "./components/pages/home-page/home-page.jsx";
 
 import "./main.css";
-import { useState } from "react";
 
 const root = document.getElementById("root");
 
