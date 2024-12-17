@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import AudioPlayer from "../../ui/audio-player/audio-player";
 
+import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
+
 import "./word-desc-page.css";
 
 const WordDescPage = () => {
@@ -41,13 +43,13 @@ const WordDescPage = () => {
             <h2 className="word-desc__heading">Meaning of {data[0].word} in English</h2>
             <ul className="word-desc__links">
               <li className="word-desc__link">
-                <a className="word-desc__btn" href={data[0].sourceUrls[0]} target="__blank">
-                  <div className="word-desc__btn"></div>
+                <a href={data[0].sourceUrls[0]} target="__blank">
+                  <img src={wikiLogo} alt="link to Wikipedia" />
                 </a>
               </li>
               <li className="word-desc__link">
-                <a className="word-desc__btn" href={data[0].sourceUrls[1]} target="__blank">
-                  <div className="word-desc__btn"></div>
+                <a href={data[0].sourceUrls[1]} target="__blank">
+                  <img src={wikiLogo} alt="link to Wikipedia" />
                 </a>
               </li>
             </ul>
