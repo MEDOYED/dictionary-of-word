@@ -55,6 +55,7 @@ const WordDescPage = () => {
             <h2 className="word-desc__title">{data[1]?.word}</h2>
             <div>{data[0]?.phonetics[1]?.text}</div>
 
+            <AudioPlayer country={"CA"} link={0} data={data} />
             <AudioPlayer country={"UK"} link={1} data={data} />
             <AudioPlayer country={"US"} link={2} data={data} />
 
