@@ -1,3 +1,5 @@
+import playIcon from "../../../assets/img/word-desc/play-icon.png";
+
 import "./audio-player.css";
 
 const AudioPlayer = ({ link, country, data }) => {
@@ -5,12 +7,19 @@ const AudioPlayer = ({ link, country, data }) => {
 
   if (!audioSrc) return null;
 
+  const playAudio = () => {
+    const audio = new Audio(audioSrc);
+    console.log(audio);
+    audio.play();
+    console.log(audio.play());
+  };
+
   return (
     <div className="word-desc__player">
       <h2>{country}</h2>
-      <audio controls>
-        <source src={data[0]?.phonetics?.[link]?.audio || ""} type="audio/mpeg" />
-      </audio>
+      <button onClick={playAudio}>
+        <img src={playIcon} alt="button listen audio" />
+      </button>
     </div>
   );
 };
