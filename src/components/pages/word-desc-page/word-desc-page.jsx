@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import AudioPlayer from "../../ui/audio-player/audio-player";
+import Line1px from "../../ui/line-1px/line-1px";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
 
@@ -40,7 +41,9 @@ const WordDescPage = () => {
       <section className="word-desc">
         <div className="word-desc__wrapper">
           <div className="word-desc__content">
-            <h2 className="word-desc__heading">Meaning of {data[0].word} in English</h2>
+            <h2 className="word-desc__heading">
+              Meaning of <span className="word-desc__heading--bold">{data[0].word}</span> in English
+            </h2>
             <ul className="word-desc__links">
               <li className="word-desc__link">
                 <a href={data[0].sourceUrls[0]} target="__blank">
@@ -53,7 +56,8 @@ const WordDescPage = () => {
                 </a>
               </li>
             </ul>
-            <hr className="word-desc__line" />
+            <Line1px />
+            {/* <hr className="word-desc__line" /> */}
             <h2 className="word-desc__title">{data[1]?.word}</h2>
             <div>{data[0]?.phonetics[1]?.text}</div>
 

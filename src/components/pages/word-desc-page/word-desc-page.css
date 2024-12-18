@@ -1,5 +1,27 @@
-.word-desc__btn {
-  width: 20px;
-  height: 20px;
-  background-color: #000;
+.word-desc__wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.word-desc__heading {
+  font-size: 20px;
+  font-style: italic;
+  padding-top: 25px;
+}
+
+.word-desc__heading--bold {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.word-desc__links {
+  display: flex;
+  margin-left: calc(100% - 125px);
+
+  margin-bottom: 20px;
+}
+
+.word-desc__link a img {
+  width: 65px;
+  padding-right: 15px;
 }
