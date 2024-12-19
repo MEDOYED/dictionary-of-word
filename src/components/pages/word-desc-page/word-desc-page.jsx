@@ -36,12 +36,8 @@ const WordDescPage = () => {
   if (error) return <p style={{ color: "red" }}>{error}</p>;
   if (!data) return <p>No data available</p>;
 
-  // ===================
-  // const linkToAudio =
-
   return (
     <>
-      <button className="bob"></button>
       <section className="word-desc">
         <div className="word-desc__wrapper">
           <div className="word-desc__content">
@@ -61,13 +57,8 @@ const WordDescPage = () => {
                 </a>
               </li>
             </ul>
-            <Line1px />
-            {/* <h2 className="word-desc__title">{data[1]?.word}</h2>
-            <div>{data[0]?.phonetics[1]?.text}</div>
 
-            <AudioPlayer country={"CA"} link={0} data={data} />
-            <AudioPlayer country={"UK"} link={1} data={data} />
-            <AudioPlayer country={"US"} link={2} data={data} /> */}
+            <Line1px />
 
             <hr className="word-desc__bold-line" />
 
@@ -75,9 +66,7 @@ const WordDescPage = () => {
               <h2 className="word-desc__title">{data[0]?.word}</h2>
               <h2 className="word-desc__part-of-spech">{data[0]?.meanings[0]?.partOfSpeech}</h2>
               <ul className="word-desc__audio-players">
-                <AudioPlayer country={"CA"} link={0} data={data} />
-                <AudioPlayer country={"UK"} link={1} data={data} />
-                <AudioPlayer country={"US"} link={2} data={data} />
+                <AudioPlayer data={data} />
               </ul>
               <div className="word-desc__definition">
                 {data[0]?.meanings[0]?.definitions[0]?.definition}
@@ -114,9 +103,7 @@ const WordDescPage = () => {
               <h2 className="word-desc__title">{data[0]?.word}</h2>
               <h2 className="word-desc__part-of-spech">{data[0]?.meanings[1]?.partOfSpeech}</h2>
               <ul className="word-desc__audio-players">
-                <AudioPlayer country={"CA"} link={0} data={data} />
-                <AudioPlayer country={"UK"} link={1} data={data} />
-                <AudioPlayer country={"US"} link={2} data={data} />
+                <AudioPlayer data={data} />
               </ul>
               <div className="word-desc__definition">
                 {data[0]?.meanings[1]?.definitions[0]?.definition}
