@@ -36,62 +36,73 @@ const WordDescPage = () => {
   if (error) return <p style={{ color: "red" }}>{error}</p>;
   if (!data) return <p>No data available</p>;
 
+  // ===================
+  // const linkToAudio =
+
   return (
     <>
+      <button className="bob"></button>
       <section className="word-desc">
         <div className="word-desc__wrapper">
           <div className="word-desc__content">
             <h2 className="word-desc__heading">
-              Meaning of <span className="word-desc__heading--bold">{data[0].word}</span> in English
+              Meaning of <span className="word-desc__heading--bold">{data[0]?.word}</span> in
+              English
             </h2>
             <ul className="word-desc__links">
               <li className="word-desc__link">
-                <a href={data[0].sourceUrls[0]} target="__blank">
+                <a href={data[0]?.sourceUrls[0]} target="__blank">
                   <img src={wikiLogo} alt="link to Wikipedia" />
                 </a>
               </li>
               <li className="word-desc__link">
-                <a href={data[0].sourceUrls[1]} target="__blank">
+                <a href={data[0]?.sourceUrls[1]} target="__blank">
                   <img src={wikiLogo} alt="link to Wikipedia" />
                 </a>
               </li>
             </ul>
             <Line1px />
-            {/* <hr className="word-desc__line" /> */}
-            <h2 className="word-desc__title">{data[1]?.word}</h2>
+            {/* <h2 className="word-desc__title">{data[1]?.word}</h2>
             <div>{data[0]?.phonetics[1]?.text}</div>
 
             <AudioPlayer country={"CA"} link={0} data={data} />
             <AudioPlayer country={"UK"} link={1} data={data} />
-            <AudioPlayer country={"US"} link={2} data={data} />
+            <AudioPlayer country={"US"} link={2} data={data} /> */}
 
             <hr className="word-desc__bold-line" />
 
             <section className="word-desc__dog-noun">
-              <h2 className="word-desc__title">{data[0].word}</h2>
-              <h2 className="word-desc__part-of-spech">{data[0].meanings[0].partOfSpeech}</h2>
+              <h2 className="word-desc__title">{data[0]?.word}</h2>
+              <h2 className="word-desc__part-of-spech">{data[0]?.meanings[0]?.partOfSpeech}</h2>
+              <ul className="word-desc__audio-players">
+                <AudioPlayer country={"CA"} link={0} data={data} />
+                <AudioPlayer country={"UK"} link={1} data={data} />
+                <AudioPlayer country={"US"} link={2} data={data} />
+              </ul>
               <div className="word-desc__definition">
-                {data[0].meanings[0].definitions[0].definition}
+                {data[0]?.meanings[0]?.definitions[0]?.definition}
               </div>
-              <div className="word-desc__example">{data[0].meanings[0].definitions[0].example}</div>
+              <div className="word-desc__example">
+                {data[0]?.meanings[0]?.definitions[0]?.example}
+              </div>
 
               <ul className="word-desc__synonyms-list">
-                <li className="word-desc__synonyms-item">{data[0].meanings[0].synonyms[0]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[0].synonyms[1]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[0].synonyms[2]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[0].synonyms[3]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[0].synonyms[4]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[0]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[1]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[2]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[3]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[4]}</li>
               </ul>
 
               <ul className="word-desc__more-definitions-list">
                 <li className="word-desc__more-definitions-item">
-                  {data[0].meanings[0].definitions[1].definition}
+                  {data[0]?.meanings[0]?.definitions[1]?.definition}
                 </li>
                 <li className="word-desc__more-definitions-item">
-                  {data[0].meanings[0].definitions[2].definition}
+                  {data[0]?.meanings[0]?.definitions[2]?.definition}
                 </li>
                 <li className="word-desc__more-definitions-item">
-                  {data[0].meanings[0].definitions[3].definition}
+                  {data[0]?.meanings[0]?.definitions[3]?.definition}
                 </li>
               </ul>
             </section>
@@ -100,19 +111,26 @@ const WordDescPage = () => {
             <div>=========================================================</div>
 
             <section className="word-desc__dog-verb">
-              <h2 className="word-desc__title">{data[0].word}</h2>
-              <h2 className="word-desc__part-of-spech">{data[0].meanings[1].partOfSpeech}</h2>
+              <h2 className="word-desc__title">{data[0]?.word}</h2>
+              <h2 className="word-desc__part-of-spech">{data[0]?.meanings[1]?.partOfSpeech}</h2>
+              <ul className="word-desc__audio-players">
+                <AudioPlayer country={"CA"} link={0} data={data} />
+                <AudioPlayer country={"UK"} link={1} data={data} />
+                <AudioPlayer country={"US"} link={2} data={data} />
+              </ul>
               <div className="word-desc__definition">
-                {data[0].meanings[1].definitions[0].definition}
+                {data[0]?.meanings[1]?.definitions[0]?.definition}
               </div>
-              <div className="word-desc__example">{data[0].meanings[1].definitions[0].example}</div>
+              <div className="word-desc__example">
+                {data[0]?.meanings[1]?.definitions[0]?.example}
+              </div>
 
               <ul className="word-desc__synonyms-list">
-                <li className="word-desc__synonyms-item">{data[0].meanings[1].synonyms[0]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[1].synonyms[1]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[1].synonyms[2]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[1].synonyms[3]}</li>
-                <li className="word-desc__synonyms-item">{data[0].meanings[1].synonyms[4]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[0]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[1]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[2]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[3]}</li>
+                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[4]}</li>
               </ul>
 
               <ul className="word-desc__more-definitions-list">

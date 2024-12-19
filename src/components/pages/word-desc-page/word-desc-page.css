@@ -1,3 +1,9 @@
+.bob {
+  width: 40px;
+  height: 40px;
+  background-color: #525252;
+}
+
 .word-desc__wrapper {
   max-width: 600px;
   margin: 0 auto;
@@ -17,11 +23,13 @@
 .word-desc__links {
   display: flex;
   margin-left: calc(100% - 125px);
-
-  margin-bottom: 20px;
 }
 
 .word-desc__link a img {
   width: 65px;
   padding-right: 15px;
+}
+
+.word-desc__title {
+  font-size: 29px;
 }
