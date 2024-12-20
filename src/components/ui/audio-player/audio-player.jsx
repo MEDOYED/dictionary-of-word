@@ -11,7 +11,8 @@ const AudioPlayer = ({ data }) => {
 
   return phoneticsArr.map((phonetic, i) => {
     const audioLinkString = phonetic.audio || "";
-    const countryFromLink = audioLinkString.match(/-(ca|uk|us)/)?.[1]?.toUpperCase() || "UNKNOWN";
+    const countryFromLink =
+      audioLinkString.match(/-(ca|uk|us|au)/)?.[1]?.toUpperCase() || "UNKNOWN";
 
     if (!audioLinkString) return null;
 
