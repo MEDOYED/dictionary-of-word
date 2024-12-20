@@ -45,3 +45,22 @@
 .word-desc__audio-players {
   display: flex;
 }
+
+.word-desc__main-part {
+  display: flex;
+}
+
+.word-desc__main-part img {
+  margin-right: 50px;
+  width: 300px;
+}
+
+.word-desc__definition {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.word-desc__example h2 {
+  font-weight: 600;
+  font-style: italic;
+}

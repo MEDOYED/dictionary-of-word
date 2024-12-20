@@ -5,6 +5,7 @@ import AudioPlayer from "../../ui/audio-player/audio-player";
 import Line1px from "../../ui/line-1px/line-1px";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
+import catImg from "../../../assets/img/word-desc/cat.jpeg";
 
 import "./word-desc-page.css";
 
@@ -35,6 +36,10 @@ const WordDescPage = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
   if (!data) return <p>No data available</p>;
+
+  // const isExample = data[0]?.meanings[0]?.definitions[0]?.example;
+
+  // if (!isExample) return null;
 
   return (
     <>
@@ -68,11 +73,20 @@ const WordDescPage = () => {
               <ul className="word-desc__audio-players">
                 <AudioPlayer data={data} />
               </ul>
-              <div className="word-desc__definition">
-                {data[0]?.meanings[0]?.definitions[0]?.definition}
-              </div>
-              <div className="word-desc__example">
-                {data[0]?.meanings[0]?.definitions[0]?.example}
+
+              <div className="word-desc__main-part">
+                <img src={catImg} alt="picture of cat" />
+                <div className="word-desc__main-part-wrapper">
+                  <div className="word-desc__definition">
+                    {data[0]?.meanings[0]?.definitions[0]?.definition}
+                  </div>
+                  {data[0]?.meanings[0]?.definitions[0]?.example && (
+                    <div className="word-desc__example">
+                      <h2>For example:</h2>
+                      <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <ul className="word-desc__synonyms-list">
@@ -105,6 +119,7 @@ const WordDescPage = () => {
               <ul className="word-desc__audio-players">
                 <AudioPlayer data={data} />
               </ul>
+
               <div className="word-desc__definition">
                 {data[0]?.meanings[1]?.definitions[0]?.definition}
               </div>
