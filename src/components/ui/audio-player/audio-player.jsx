@@ -25,11 +25,11 @@ const AudioPlayer = ({ data }) => {
 
     return (
       <div className="word-desc__player">
-        <h2>{countryFromLink}</h2>
-        <button onClick={playAudio}>
-          <img src={playIcon} alt="button listen audio" />
+        <h2 className="word-desc__player-country">{countryFromLink}</h2>
+        <button className="word-desc__player-btn" onClick={playAudio}>
+          <img className="word-desc__player-icon" src={playIcon} alt="button listen audio" />
         </button>
-        <h3>{data[0]?.phonetics?.[i]?.text}</h3>
+        <h3 className="word-desc__player-phonetic-text">{data[0]?.phonetics?.[i]?.text}</h3>
       </div>
     );
   });
