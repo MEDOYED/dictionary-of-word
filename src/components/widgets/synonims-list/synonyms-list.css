@@ -52,3 +52,7 @@
 .word-desc__synonyms-list {
   display: none;
 }
+
+.word-desc__synonyms-list.active {
+  display: block;
+}
