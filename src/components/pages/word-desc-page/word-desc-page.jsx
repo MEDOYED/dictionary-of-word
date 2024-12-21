@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import AudioPlayer from "../../ui/audio-player/audio-player";
 import Line1px from "../../ui/line-1px/line-1px";
+import SynonymsList from "../../widgets/synonims-list/synonyms-list";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
 import catImg from "../../../assets/img/word-desc/cat.jpeg";
@@ -89,13 +90,7 @@ const WordDescPage = () => {
                 </div>
               </div>
 
-              <ul className="word-desc__synonyms-list">
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[0]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[1]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[2]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[3]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[4]}</li>
-              </ul>
+              <SynonymsList data={data} />
 
               <ul className="word-desc__more-definitions-list">
                 <li className="word-desc__more-definitions-item">

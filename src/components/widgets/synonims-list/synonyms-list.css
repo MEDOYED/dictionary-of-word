@@ -1,0 +1,54 @@
+.word-desc__synonyms-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--blue);
+  margin-top: 15px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+
+.word-desc__synonyms-title h3 {
+  font-size: 20px;
+}
+
+.word-desc__synonyms-title span {
+  display: inline-flex;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  transform: rotate(0);
+  transition: transform 0.5s ease-out;
+}
+
+.word-desc__synonyms-title.active span {
+  transform: rotate(45deg);
+}
+
+.word-desc__synonyms-title span::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 3px;
+  background-color: #000000;
+  transform: translate(-50%, -50%);
+}
+
+.word-desc__synonyms-title span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 50%;
+  background-color: #000000;
+  transform: translate(-40%, -50%);
+}
+
+.word-desc__synonyms-list {
+  display: none;
+}
