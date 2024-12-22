@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import AudioPlayer from "../../ui/audio-player/audio-player";
 import Line1px from "../../ui/line-1px/line-1px";
 import SynonymsList from "../../widgets/synonims-list/synonyms-list";
+import BoldLine from "../../ui/bold-line/bold-line";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
 import catImg from "../../../assets/img/word-desc/cat.jpeg";
@@ -38,10 +39,6 @@ const WordDescPage = () => {
   if (error) return <p style={{ color: "red" }}>{error}</p>;
   if (!data) return <p>No data available</p>;
 
-  // const isExample = data[0]?.meanings[0]?.definitions[0]?.example;
-
-  // if (!isExample) return null;
-
   return (
     <>
       <section className="word-desc">
@@ -65,8 +62,6 @@ const WordDescPage = () => {
             </ul>
 
             <Line1px />
-
-            <hr className="word-desc__bold-line" />
 
             <section className="word-desc__dog-noun">
               <h2 className="word-desc__title">{data[0]?.word}</h2>
@@ -106,7 +101,8 @@ const WordDescPage = () => {
               </ul>
             </section>
 
-            <hr className="word-desc__bold-line" />
+            <BoldLine />
+
             {/* ===================================================== */}
 
             <section className="word-desc__dog-verb">
