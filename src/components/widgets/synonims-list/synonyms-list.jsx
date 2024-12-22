@@ -24,14 +24,16 @@ const SynonymsList = ({ data, meaningsNum }) => {
 
   return (
     <>
-      <div
-        className="word-desc__synonyms-title"
-        data-tab="tab-1"
-        onClick={handleClick}
-        ref={titleRef}>
-        <h3>Synonyms:</h3>
-        <span></span>
-      </div>
+      {data[0]?.meanings[meaningsNum]?.synonyms[0] && (
+        <div
+          className="word-desc__synonyms-title"
+          data-tab="tab-1"
+          onClick={handleClick}
+          ref={titleRef}>
+          <h3>Synonyms:</h3>
+          <span></span>
+        </div>
+      )}
       <ul className="word-desc__synonyms-list" ref={listRef} id="tab-1">
         {data[0]?.meanings[meaningsNum]?.synonyms[0] && (
           <li className="word-desc__synonyms-item">
