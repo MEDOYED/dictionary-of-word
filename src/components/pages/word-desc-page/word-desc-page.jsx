@@ -92,6 +92,7 @@ const WordDescPage = () => {
 
               <SynonymsList data={data} meaningsNum={0} />
 
+              <h2 className="word-desc__more-examples">More examples:</h2>
               <ul className="word-desc__more-definitions-list">
                 <li className="word-desc__more-definitions-item">
                   {data[0]?.meanings[0]?.definitions[1]?.definition}
@@ -106,7 +107,7 @@ const WordDescPage = () => {
             </section>
 
             <hr className="word-desc__bold-line" />
-            <div>=========================================================</div>
+            {/* ===================================================== */}
 
             <section className="word-desc__dog-verb">
               <h2 className="word-desc__title">{data[0]?.word}</h2>
@@ -122,16 +123,9 @@ const WordDescPage = () => {
                 {data[0]?.meanings[1]?.definitions[0]?.example}
               </div>
 
-              {/* <ul className="word-desc__synonyms-list">
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[0]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[1]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[2]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[3]}</li>
-                <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[4]}</li>
-              </ul> */}
-
               <SynonymsList data={data} meaningsNum={1} />
 
+              <h2 className="word-desc__more-examples">More examples:</h2>
               <ul className="word-desc__more-definitions-list">
                 <li className="word-desc__more-definitions-item">
                   {data[0]?.meanings[1]?.definitions[1]?.definition}

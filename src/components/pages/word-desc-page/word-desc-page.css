@@ -64,3 +64,18 @@
   font-weight: 600;
   font-style: italic;
 }
+
+.word-desc__more-examples {
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.word-desc__more-definitions-list {
+  padding: 0px 10px 10px 0px;
+}
+
+.word-desc__more-definitions-item {
+  padding-bottom: 5px;
+  text-indent: 10px;
+}
