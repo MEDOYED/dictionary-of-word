@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 import "./synonyms-list.css";
 
-const SynonymsList = ({ data }) => {
+const SynonymsList = ({ data, meaningsNum }) => {
   const titleRef = useRef(null);
   const listRef = useRef(null);
 
@@ -33,11 +33,31 @@ const SynonymsList = ({ data }) => {
         <span></span>
       </div>
       <ul className="word-desc__synonyms-list" ref={listRef} id="tab-1">
-        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[0]}</li>
-        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[1]}</li>
-        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[2]}</li>
-        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[3]}</li>
-        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[4]}</li>
+        {data[0]?.meanings[meaningsNum]?.synonyms[0] && (
+          <li className="word-desc__synonyms-item">
+            - {data[0]?.meanings[meaningsNum]?.synonyms[0]}
+          </li>
+        )}
+        {data[0]?.meanings[meaningsNum]?.synonyms[1] && (
+          <li className="word-desc__synonyms-item">
+            - {data[0]?.meanings[meaningsNum]?.synonyms[1]}
+          </li>
+        )}
+        {data[0]?.meanings[meaningsNum]?.synonyms[2] && (
+          <li className="word-desc__synonyms-item">
+            - {data[0]?.meanings[meaningsNum]?.synonyms[2]}
+          </li>
+        )}
+        {data[0]?.meanings[meaningsNum]?.synonyms[3] && (
+          <li className="word-desc__synonyms-item">
+            - {data[0]?.meanings[meaningsNum]?.synonyms[3]}
+          </li>
+        )}
+        {data[0]?.meanings[meaningsNum]?.synonyms[4] && (
+          <li className="word-desc__synonyms-item">
+            - {data[0]?.meanings[meaningsNum]?.synonyms[4]}
+          </li>
+        )}
       </ul>
     </>
   );

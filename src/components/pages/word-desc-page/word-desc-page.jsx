@@ -90,7 +90,7 @@ const WordDescPage = () => {
                 </div>
               </div>
 
-              <SynonymsList data={data} />
+              <SynonymsList data={data} meaningsNum={0} />
 
               <ul className="word-desc__more-definitions-list">
                 <li className="word-desc__more-definitions-item">
@@ -122,13 +122,15 @@ const WordDescPage = () => {
                 {data[0]?.meanings[1]?.definitions[0]?.example}
               </div>
 
-              <ul className="word-desc__synonyms-list">
+              {/* <ul className="word-desc__synonyms-list">
                 <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[0]}</li>
                 <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[1]}</li>
                 <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[2]}</li>
                 <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[3]}</li>
                 <li className="word-desc__synonyms-item">{data[0]?.meanings[1]?.synonyms[4]}</li>
-              </ul>
+              </ul> */}
+
+              <SynonymsList data={data} meaningsNum={1} />
 
               <ul className="word-desc__more-definitions-list">
                 <li className="word-desc__more-definitions-item">
