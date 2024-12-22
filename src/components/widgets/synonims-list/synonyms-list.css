@@ -4,7 +4,7 @@
   align-items: center;
   background-color: var(--blue);
   margin-top: 15px;
-  padding: 0px 10px;
+  padding: 0px 30px;
   border-radius: 5px;
   transition: all 0.1s;
 }
@@ -25,6 +25,10 @@
 
 .word-desc__synonyms-title.active span {
   transform: rotate(45deg);
+}
+
+.word-desc__synonyms-title.active {
+  border-radius: 5px 5px 0 0;
 }
 
 .word-desc__synonyms-title span::before {
@@ -50,9 +54,23 @@
 }
 
 .word-desc__synonyms-list {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden; /* Это важно для предотвращения показа содержимого */
+  transition: max-height 0.4s ease-out, opacity 0.1s ease-out;
+  border-radius: 0 0 5px 5px;
 }
 
 .word-desc__synonyms-list.active {
-  display: block;
+  max-height: 200px; /* Убедитесь, что значение достаточно велико */
+  opacity: 1;
+}
+
+.word-desc__synonyms-item {
+  background-color: var(--blue-02-op);
+  padding-left: 15px;
+}
+
+.word-desc__synonyms-item:last-child {
+  padding-bottom: 8px;
 }

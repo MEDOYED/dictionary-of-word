@@ -7,12 +7,18 @@ const SynonymsList = ({ data }) => {
   const listRef = useRef(null);
 
   const handleClick = () => {
-    if (titleRef.current.classList.contains("active")) {
+    const isActive = listRef.current.classList.contains("active");
+
+    if (isActive) {
+      listRef.current.style.maxHeight = 0;
       titleRef.current.classList.remove("active");
-      listRef.current.classList.remove("active");
+      setTimeout(() => {
+        listRef.current.classList.remove("active");
+      }, 300);
     } else {
       titleRef.current.classList.add("active");
       listRef.current.classList.add("active");
+      listRef.current.style.maxHeight = `${listRef.current.scrollHeight}px`;
     }
   };
 
@@ -27,11 +33,11 @@ const SynonymsList = ({ data }) => {
         <span></span>
       </div>
       <ul className="word-desc__synonyms-list" ref={listRef} id="tab-1">
-        <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[0]}</li>
-        <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[1]}</li>
-        <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[2]}</li>
-        <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[3]}</li>
-        <li className="word-desc__synonyms-item">{data[0]?.meanings[0]?.synonyms[4]}</li>
+        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[0]}</li>
+        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[1]}</li>
+        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[2]}</li>
+        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[3]}</li>
+        <li className="word-desc__synonyms-item">- {data[0]?.meanings[0]?.synonyms[4]}</li>
       </ul>
     </>
   );
