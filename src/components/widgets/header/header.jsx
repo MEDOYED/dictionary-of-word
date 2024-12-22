@@ -1,5 +1,7 @@
 import { Link } from "react-router";
+
 import hithubIcon from "../../../assets/img/header/github-icon.svg";
+import bookIcon from "../../../assets/img/header/book.png";
 
 import "./header.css";
 
@@ -19,8 +21,8 @@ const Header = () => {
                 </a>
               </li>
               <li className="header__nav-link">
-                <a href="https://github.com/MEDOYED/dictionary-of-word" target="_blank">
-                  <img src={hithubIcon} alt="link to github" />
+                <a href="https://dictionaryapi.dev/" target="_blank">
+                  <img src={bookIcon} alt="link to github" />
                 </a>
               </li>
             </ul>

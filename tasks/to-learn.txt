@@ -1,2 +1,3 @@
 useRef
 fetch запрос
+.match(/-(ca|uk|us|au)/)  -->  регулярние виражения

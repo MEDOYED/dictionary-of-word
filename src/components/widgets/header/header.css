@@ -19,4 +19,20 @@
 
 .header__nav-links {
   display: flex;
+  align-items: center;
+}
+
+.header__nav-link {
+  margin-right: 10px;
+}
+
+/* .header__nav-link:last-child a img {
+  max-width: 30px;
+  max-width: 30px;
+} */
+
+.header__nav-link a[href="https://dictionaryapi.dev/"] img
+{
+  max-width: 30px;
+  max-width: 30px;
 }
