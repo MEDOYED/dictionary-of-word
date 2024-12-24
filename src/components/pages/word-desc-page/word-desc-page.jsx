@@ -6,6 +6,8 @@ import Line1px from "../../ui/line-1px/line-1px";
 import SynonymsList from "../../widgets/synonims-list/synonyms-list";
 import BoldLine from "../../ui/bold-line/bold-line";
 
+import ImageAi from "../../widgets/image-ai/image-ai";
+
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
 import catImg from "../../../assets/img/word-desc/cat.jpeg";
 
@@ -71,7 +73,7 @@ const WordDescPage = () => {
               </ul>
 
               <div className="word-desc__main-part">
-                <img src={catImg} alt="picture of cat" />
+                <ImageAi word={word} data={data} elemOfArr={0} />
                 <div className="word-desc__main-part-wrapper">
                   <div className="word-desc__definition">
                     {data[0]?.meanings[0]?.definitions[0]?.definition}
@@ -112,11 +114,19 @@ const WordDescPage = () => {
                 <AudioPlayer data={data} />
               </ul>
 
-              <div className="word-desc__definition">
-                {data[0]?.meanings[1]?.definitions[0]?.definition}
-              </div>
-              <div className="word-desc__example">
-                {data[0]?.meanings[1]?.definitions[0]?.example}
+              <div className="word-desc__main-part">
+                <ImageAi word={word} data={data} elemOfArr={1} />
+                <div className="word-desc__main-part-wrapper">
+                  <div className="word-desc__definition">
+                    {data[0]?.meanings[1]?.definitions[0]?.definition}
+                  </div>
+                  {data[0]?.meanings[1]?.definitions[0]?.example && (
+                    <div className="word-desc__example">
+                      <h2>For example:</h2>
+                      <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <SynonymsList data={data} meaningsNum={1} />
