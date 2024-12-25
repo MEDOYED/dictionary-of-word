@@ -9,7 +9,6 @@ import BoldLine from "../../ui/bold-line/bold-line";
 import ImageAi from "../../widgets/image-ai/image-ai";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
-import catImg from "../../../assets/img/word-desc/cat.jpeg";
 
 import "./word-desc-page.css";
 
