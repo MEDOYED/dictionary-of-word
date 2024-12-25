@@ -19,7 +19,8 @@ const ImageAi = (props) => {
         );
         setImages(data.results);
         setTotalPages(data.total_pages);
-        console.log(data);
+        // console.log(data);
+        console.log(import.meta.env.VITE_API_KEY);
       } catch (error) {
         console.log(error);
       }
