@@ -2,6 +2,7 @@ import { Link } from "react-router";
 
 import hithubIcon from "../../../assets/img/header/github-icon.svg";
 import bookIcon from "../../../assets/img/header/book.png";
+import unsplashIcon from "../../../assets/img/header/unsplash-api-icon.png";
 
 import "./header.css";
 
@@ -23,6 +24,11 @@ const Header = () => {
               <li className="header__nav-link">
                 <a href="https://dictionaryapi.dev/" target="_blank">
                   <img src={bookIcon} alt="link to github" />
+                </a>
+              </li>
+              <li className="header__nav-link">
+                <a href="https://unsplash.com/documentation" target="_blank">
+                  <img src={unsplashIcon} alt="link to github" />
                 </a>
               </li>
             </ul>

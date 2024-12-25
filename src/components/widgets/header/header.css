@@ -36,3 +36,10 @@
   max-width: 30px;
   max-width: 30px;
 }
+
+.header__nav-link a[href="https://unsplash.com/documentation"] img
+{
+  margin-left: 10px;
+  max-width: 30px;
+  max-width: 30px;
+}
