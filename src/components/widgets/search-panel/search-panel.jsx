@@ -13,6 +13,12 @@ const SearchPanel = () => {
     }
   };
 
+  const handleEnterDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <>
       <section className="search-input">
@@ -21,6 +27,7 @@ const SearchPanel = () => {
             type="text"
             value={word}
             onChange={(e) => setWord(e.target.value)}
+            onKeyDown={handleEnterDown}
             placeholder="Type your word..."
           />
           <span>
