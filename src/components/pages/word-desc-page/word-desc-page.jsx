@@ -48,12 +48,12 @@ const WordDescPage = () => {
         </h2>
         <ul className="word-desc__links">
           <li className="word-desc__link">
-            <a href={data[0]?.sourceUrls[0]} target="__blank">
+            <a href={data[0]?.sourceUrls[0]} target="_blank">
               <img src={wikiLogo} alt="link to Wikipedia" />
             </a>
           </li>
           <li className="word-desc__link">
-            <a href={data[0]?.sourceUrls[1]} target="__blank">
+            <a href={data[0]?.sourceUrls[1]} target="_blank">
               <img src={wikiLogo} alt="link to Wikipedia" />
             </a>
           </li>
@@ -71,13 +71,15 @@ const WordDescPage = () => {
           <div className="main-part">
             <ImageAi word={word} data={data} elemOfArr={0} />
 
-            <div className="definition">{data[0]?.meanings[0]?.definitions[0]?.definition}</div>
-            {data[0]?.meanings[0]?.definitions[0]?.example && (
-              <div className="example">
-                <h2>For example:</h2>
-                <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
-              </div>
-            )}
+            <div className="wrapper">
+              <div className="definition">{data[0]?.meanings[0]?.definitions[0]?.definition}</div>
+              {data[0]?.meanings[0]?.definitions[0]?.example && (
+                <div className="example">
+                  <h2>For example:</h2>
+                  <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
+                </div>
+              )}
+            </div>
           </div>
 
           <SynonymsList data={data} meaningsNum={0} />
@@ -110,13 +112,15 @@ const WordDescPage = () => {
           <div className="main-part">
             <ImageAi word={word} data={data} elemOfArr={1} />
 
-            <div className="definition">{data[0]?.meanings[1]?.definitions[0]?.definition}</div>
-            {data[0]?.meanings[1]?.definitions[0]?.example && (
-              <div className="example">
-                <h2>For example:</h2>
-                <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
-              </div>
-            )}
+            <div className="wrapper">
+              <div className="definition">{data[0]?.meanings[1]?.definitions[0]?.definition}</div>
+              {data[0]?.meanings[1]?.definitions[0]?.example && (
+                <div className="example">
+                  <h2>For example:</h2>
+                  <p>- {data[0]?.meanings[1]?.definitions[0]?.example}</p>
+                </div>
+              )}
+            </div>
           </div>
 
           <SynonymsList data={data} meaningsNum={1} />

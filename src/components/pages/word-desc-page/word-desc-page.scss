@@ -43,15 +43,20 @@
     .main-part {
       display: flex;
 
-      .definition {
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
 
-      .example {
-        h2 {
+        .definition {
           font-weight: 600;
-          font-style: italic;
+          margin-bottom: 15px;
+        }
+
+        .example {
+          h2 {
+            font-weight: 600;
+            font-style: italic;
+          }
         }
       }
     }
