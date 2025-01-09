@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+import "./image-ai.css";
+
 const API_URL = "https://api.unsplash.com/search/photos";
 const IMAGES_PER_PAGE = 2;
 
@@ -33,6 +35,7 @@ const ImageAi = (props) => {
     <>
       {images.length > 0 && (
         <img
+          className="image-ai__img"
           key={images[elemOfArr].id}
           src={images[elemOfArr].urls.small}
           alt={images[elemOfArr].alt_description}

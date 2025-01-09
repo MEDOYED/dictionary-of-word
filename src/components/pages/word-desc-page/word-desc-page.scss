@@ -1,78 +1,74 @@
 .word-desc {
   max-width: 600px;
   margin: 0 auto;
-}
 
-.word-desc__heading {
-  font-size: 20px;
-  font-style: italic;
-  padding-top: 25px;
-}
+  &__heading {
+    font-size: 20px;
+    font-style: italic;
+    padding-top: 25px;
 
-.word-desc__heading--bold {
-  font-weight: bold;
-  font-style: normal;
-}
+    &--bold {
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
 
-.word-desc__links {
-  display: flex;
-  margin-left: calc(100% - 125px);
-}
+  &__links {
+    display: flex;
+    margin-left: calc(100% - 125px);
 
-.word-desc__link a img {
-  width: 65px;
-  padding-right: 15px;
-}
+    .word-desc__link a img {
+      width: 65px;
+      padding-right: 15px;
+    }
+  }
 
-.word-desc__title {
-  font-size: 35px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+  section {
+    .title {
+      font-size: 35px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-.word-desc__part-of-spech {
-  font-style: italic;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+    .part-of-spech {
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-.word-desc__audio-players {
-  display: flex;
-}
+    .audio-players {
+      display: flex;
+    }
 
-.word-desc__main-part {
-  display: flex;
-}
+    .main-part {
+      display: flex;
 
-.word-desc__main-part img {
-  margin-right: 50px;
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 7px;
-}
+      .definition {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
 
-.word-desc__definition {
-  font-weight: 600;
-  margin-bottom: 15px;
-}
+      .example {
+        h2 {
+          font-weight: 600;
+          font-style: italic;
+        }
+      }
+    }
 
-.word-desc__example h2 {
-  font-weight: 600;
-  font-style: italic;
-}
+    .more-examples {
+      padding: 10px 30px;
+      font-size: 20px;
+      font-weight: 700;
+    }
 
-.word-desc__more-examples {
-  padding: 10px 30px;
-  font-size: 20px;
-  font-weight: 700;
-}
+    .more-definitions {
+      padding: 0px 10px 10px 0px;
 
-.word-desc__more-definitions-list {
-  padding: 0px 10px 10px 0px;
-}
-
-.word-desc__more-definitions-item {
-  padding-bottom: 5px;
-  text-indent: 10px;
+      &-item {
+        padding-bottom: 5px;
+        text-indent: 10px;
+      }
+    }
+  }
 }
