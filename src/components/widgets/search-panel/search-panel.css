@@ -15,6 +15,13 @@
   font-size: 30px;
   padding: 20px;
   margin-right: 40px;
+
+  @media (max-width: 700px) {
+    font-size: 25px;
+    padding: 15px;
+    margin-right: 25px;
+    max-width: 60vw;
+  }
 }
 
 .search-input__icon path {
