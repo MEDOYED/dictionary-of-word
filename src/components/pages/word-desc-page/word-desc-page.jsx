@@ -10,7 +10,7 @@ import ImageAi from "../../widgets/image-ai/image-ai";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
 
-import "./word-desc-page.css";
+import "./word-desc-page.scss";
 
 const WordDescPage = () => {
   const { word } = useParams();
@@ -43,108 +43,103 @@ const WordDescPage = () => {
   return (
     <>
       <section className="word-desc">
-        <div className="word-desc__wrapper">
-          <div className="word-desc__content">
-            <h2 className="word-desc__heading">
-              Meaning of <span className="word-desc__heading--bold">{data[0]?.word}</span> in
-              English
-            </h2>
-            <ul className="word-desc__links">
-              <li className="word-desc__link">
-                <a href={data[0]?.sourceUrls[0]} target="__blank">
-                  <img src={wikiLogo} alt="link to Wikipedia" />
-                </a>
-              </li>
-              <li className="word-desc__link">
-                <a href={data[0]?.sourceUrls[1]} target="__blank">
-                  <img src={wikiLogo} alt="link to Wikipedia" />
-                </a>
-              </li>
-            </ul>
+        <h2 className="word-desc__heading">
+          Meaning of <span className="word-desc__heading--bold">{data[0]?.word}</span> in English
+        </h2>
+        <ul className="word-desc__links">
+          <li className="word-desc__link">
+            <a href={data[0]?.sourceUrls[0]} target="__blank">
+              <img src={wikiLogo} alt="link to Wikipedia" />
+            </a>
+          </li>
+          <li className="word-desc__link">
+            <a href={data[0]?.sourceUrls[1]} target="__blank">
+              <img src={wikiLogo} alt="link to Wikipedia" />
+            </a>
+          </li>
+        </ul>
 
-            <Line1px />
+        <Line1px />
 
-            <section className="word-desc__dog-noun">
-              <h2 className="word-desc__title">{data[0]?.word}</h2>
-              <h2 className="word-desc__part-of-spech">{data[0]?.meanings[0]?.partOfSpeech}</h2>
-              <ul className="word-desc__audio-players">
-                <AudioPlayer data={data} />
-              </ul>
+        <section className="word-desc__dog-noun">
+          <h2 className="word-desc__title">{data[0]?.word}</h2>
+          <h2 className="word-desc__part-of-spech">{data[0]?.meanings[0]?.partOfSpeech}</h2>
+          <ul className="word-desc__audio-players">
+            <AudioPlayer data={data} />
+          </ul>
 
-              <div className="word-desc__main-part">
-                <ImageAi word={word} data={data} elemOfArr={0} />
-                <div className="word-desc__main-part-wrapper">
-                  <div className="word-desc__definition">
-                    {data[0]?.meanings[0]?.definitions[0]?.definition}
-                  </div>
-                  {data[0]?.meanings[0]?.definitions[0]?.example && (
-                    <div className="word-desc__example">
-                      <h2>For example:</h2>
-                      <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
-                    </div>
-                  )}
-                </div>
+          <div className="word-desc__main-part">
+            <ImageAi word={word} data={data} elemOfArr={0} />
+            <div className="word-desc__main-part-wrapper">
+              <div className="word-desc__definition">
+                {data[0]?.meanings[0]?.definitions[0]?.definition}
               </div>
-
-              <SynonymsList data={data} meaningsNum={0} />
-
-              <h2 className="word-desc__more-examples">More examples:</h2>
-              <ul className="word-desc__more-definitions-list">
-                <li className="word-desc__more-definitions-item">
-                  {data[0]?.meanings[0]?.definitions[1]?.definition}
-                </li>
-                <li className="word-desc__more-definitions-item">
-                  {data[0]?.meanings[0]?.definitions[2]?.definition}
-                </li>
-                <li className="word-desc__more-definitions-item">
-                  {data[0]?.meanings[0]?.definitions[3]?.definition}
-                </li>
-              </ul>
-            </section>
-
-            <BoldLine />
-
-            {/* ===================================================== */}
-
-            <section className="word-desc__dog-verb">
-              <h2 className="word-desc__title">{data[0]?.word}</h2>
-              <h2 className="word-desc__part-of-spech">{data[0]?.meanings[1]?.partOfSpeech}</h2>
-              <ul className="word-desc__audio-players">
-                <AudioPlayer data={data} />
-              </ul>
-
-              <div className="word-desc__main-part">
-                <ImageAi word={word} data={data} elemOfArr={1} />
-                <div className="word-desc__main-part-wrapper">
-                  <div className="word-desc__definition">
-                    {data[0]?.meanings[1]?.definitions[0]?.definition}
-                  </div>
-                  {data[0]?.meanings[1]?.definitions[0]?.example && (
-                    <div className="word-desc__example">
-                      <h2>For example:</h2>
-                      <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
-                    </div>
-                  )}
+              {data[0]?.meanings[0]?.definitions[0]?.example && (
+                <div className="word-desc__example">
+                  <h2>For example:</h2>
+                  <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
                 </div>
-              </div>
-
-              <SynonymsList data={data} meaningsNum={1} />
-
-              <h2 className="word-desc__more-examples">More examples:</h2>
-              <ul className="word-desc__more-definitions-list">
-                <li className="word-desc__more-definitions-item">
-                  {data[0]?.meanings[1]?.definitions[1]?.definition}
-                </li>
-                <li className="word-desc__more-definitions-item">
-                  {data[0]?.meanings[1]?.definitions[2]?.definition}
-                </li>
-                <li className="word-desc__more-definitions-item">
-                  {data[0]?.meanings[1]?.definitions[3]?.definition}
-                </li>
-              </ul>
-            </section>
+              )}
+            </div>
           </div>
-        </div>
+
+          <SynonymsList data={data} meaningsNum={0} />
+
+          <h2 className="word-desc__more-examples">More examples:</h2>
+          <ul className="word-desc__more-definitions-list">
+            <li className="word-desc__more-definitions-item">
+              {data[0]?.meanings[0]?.definitions[1]?.definition}
+            </li>
+            <li className="word-desc__more-definitions-item">
+              {data[0]?.meanings[0]?.definitions[2]?.definition}
+            </li>
+            <li className="word-desc__more-definitions-item">
+              {data[0]?.meanings[0]?.definitions[3]?.definition}
+            </li>
+          </ul>
+        </section>
+
+        <BoldLine />
+
+        {/* ===================================================== */}
+
+        <section className="word-desc__dog-verb">
+          <h2 className="word-desc__title">{data[0]?.word}</h2>
+          <h2 className="word-desc__part-of-spech">{data[0]?.meanings[1]?.partOfSpeech}</h2>
+          <ul className="word-desc__audio-players">
+            <AudioPlayer data={data} />
+          </ul>
+
+          <div className="word-desc__main-part">
+            <ImageAi word={word} data={data} elemOfArr={1} />
+            <div className="word-desc__main-part-wrapper">
+              <div className="word-desc__definition">
+                {data[0]?.meanings[1]?.definitions[0]?.definition}
+              </div>
+              {data[0]?.meanings[1]?.definitions[0]?.example && (
+                <div className="word-desc__example">
+                  <h2>For example:</h2>
+                  <p>- {data[0]?.meanings[0]?.definitions[0]?.example}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <SynonymsList data={data} meaningsNum={1} />
+
+          <h2 className="word-desc__more-examples">More examples:</h2>
+          <ul className="word-desc__more-definitions-list">
+            <li className="word-desc__more-definitions-item">
+              {data[0]?.meanings[1]?.definitions[1]?.definition}
+            </li>
+            <li className="word-desc__more-definitions-item">
+              {data[0]?.meanings[1]?.definitions[2]?.definition}
+            </li>
+            <li className="word-desc__more-definitions-item">
+              {data[0]?.meanings[1]?.definitions[3]?.definition}
+            </li>
+          </ul>
+        </section>
       </section>
     </>
   );
