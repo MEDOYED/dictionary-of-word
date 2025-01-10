@@ -1,0 +1,22 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10vw;
+
+  h1 {
+    font-size: 4vw;
+    text-wrap: nowrap;
+  }
+
+  img {
+    width: 15vw;
+  }
+
+  h2 {
+    font-size: 3vw;
+    text-wrap: nowrap;
+  }
+}

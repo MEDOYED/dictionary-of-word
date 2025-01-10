@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import AudioPlayer from "../../ui/audio-player/audio-player";
 import Line1px from "../../ui/line-1px/line-1px";
 import SynonymsList from "../../widgets/synonims-list/synonyms-list";
 import BoldLine from "../../ui/bold-line/bold-line";
+import ErrorPage from "../error-page/error-page";
 
 import ImageAi from "../../widgets/image-ai/image-ai";
 
@@ -23,7 +24,7 @@ const WordDescPage = () => {
       setLoading(true);
       try {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-        if (!response.ok) throw new Error("Word not found");
+        if (!response.ok) throw new Error("error");
         const result = await response.json();
         setData(result);
       } catch (err) {
@@ -37,7 +38,7 @@ const WordDescPage = () => {
   }, [word]);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p style={{ color: "red" }}>{error}</p>;
+  if (error) return <ErrorPage />;
   if (!data) return <p>No data available</p>;
 
   return (
