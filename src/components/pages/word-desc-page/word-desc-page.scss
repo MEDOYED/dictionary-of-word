@@ -43,6 +43,10 @@
     .main-part {
       display: flex;
 
+      @media (max-width: 500px) {
+        flex-direction: column;
+      }
+
       .wrapper {
         display: flex;
         flex-direction: column;

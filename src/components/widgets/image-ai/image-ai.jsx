@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import "./image-ai.css";
+import "./image-ai.scss";
 
 const API_URL = "https://api.unsplash.com/search/photos";
 const IMAGES_PER_PAGE = 2;
