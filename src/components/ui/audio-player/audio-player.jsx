@@ -1,6 +1,6 @@
 import playIcon from "../../../assets/img/word-desc/play-icon.png";
 
-import "./audio-player.css";
+import "./audio-player.scss";
 
 const AudioPlayer = ({ data }) => {
   const phoneticsArr = data[0]?.phonetics;

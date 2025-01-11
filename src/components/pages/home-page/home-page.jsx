@@ -1,6 +1,6 @@
 import SearchPanel from "../../widgets/search-panel/search-panel";
 
-import "./home-page.css";
+import "./home-page.scss";
 
 const HomePage = () => {
   return (
