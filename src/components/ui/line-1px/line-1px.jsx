@@ -1,4 +1,4 @@
-import "./line-1px.css";
+import "./line-1px.scss";
 
 const Line1px = () => {
   return (

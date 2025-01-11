@@ -4,7 +4,7 @@ import githubIcon from "../../../assets/img/header/github-icon.svg";
 import bookIcon from "../../../assets/img/header/book.png";
 import unsplashIcon from "../../../assets/img/header/unsplash-api-icon.png";
 
-import "./header.css";
+import "./header.scss";
 
 const Header = () => {
   return (
