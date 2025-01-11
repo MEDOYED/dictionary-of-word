@@ -1,9 +1,9 @@
-import "./bold-line.css";
+import "./bold-line.scss";
 
 const BoldLine = () => {
   return (
     <>
-      <hr className="word-desc__bold-line" />
+      <hr className="bold-line" />
     </>
   );
 };
