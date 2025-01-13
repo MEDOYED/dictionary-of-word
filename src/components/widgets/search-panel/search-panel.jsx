@@ -8,8 +8,9 @@ const SearchPanel = () => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    if (word.trim()) {
-      navigate(`/word/${word}`);
+    const trimWord = word.trim();
+    if (trimWord) {
+      navigate(`/word/${trimWord}`);
     }
   };
 
