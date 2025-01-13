@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <div className="error-page">
         <h1>Word not found!</h1>
         <img src={nothingFound} alt="" />
-        <h2>(try enother word)</h2>
+        <h2>(try another word)</h2>
       </div>
     </div>
   );
