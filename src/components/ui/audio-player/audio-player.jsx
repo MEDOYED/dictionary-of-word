@@ -29,7 +29,7 @@ const AudioPlayer = ({ data }) => {
         <button className="word-desc__player-btn" onClick={playAudio}>
           <img className="word-desc__player-icon" src={playIcon} alt="button listen audio" />
         </button>
-        <h3 className="word-desc__player-phonetic-text">{data[0]?.phonetics?.[i]?.text}</h3>
+        <p className="word-desc__player-phonetic-text">{data[0]?.phonetics?.[i]?.text}</p>
       </div>
     );
   });

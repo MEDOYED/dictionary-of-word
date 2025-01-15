@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import AudioPlayer from "../../ui/audio-player/audio-player";
 import Line1px from "../../ui/line-1px/line-1px";
 import SynonymsList from "../../widgets/synonims-list/synonyms-list";
 import BoldLine from "../../ui/bold-line/bold-line";
 import ErrorPage from "../error-page/error-page";
-
 import ImageAi from "../../widgets/image-ai/image-ai";
 
 import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
@@ -44,9 +43,9 @@ const WordDescPage = () => {
   return (
     <>
       <section className="word-desc">
-        <h2 className="word-desc__heading">
+        <h1 className="word-desc__heading">
           Meaning of <span className="word-desc__heading--bold">{data[0]?.word}</span> in English
-        </h2>
+        </h1>
         <ul className="word-desc__links">
           <li className="word-desc__link">
             <a href={data[0]?.sourceUrls[0]} target="_blank">
