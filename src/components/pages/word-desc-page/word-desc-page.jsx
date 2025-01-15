@@ -7,8 +7,7 @@ import SynonymsList from "../../widgets/synonims-list/synonyms-list";
 import BoldLine from "../../ui/bold-line/bold-line";
 import ErrorPage from "../error-page/error-page";
 import ImageAi from "../../widgets/image-ai/image-ai";
-
-import wikiLogo from "../../../assets/img/word-desc/wikipedia-logo-icon.svg";
+import WordDescHeading from "../../widgets/word-desc-heading/word-desc-heading";
 
 import "./word-desc-page.scss";
 
@@ -43,21 +42,7 @@ const WordDescPage = () => {
   return (
     <>
       <section className="word-desc">
-        <h1 className="word-desc__heading">
-          Meaning of <span className="word-desc__heading--bold">{data[0]?.word}</span> in English
-        </h1>
-        <ul className="word-desc__links">
-          <li className="word-desc__link">
-            <a href={data[0]?.sourceUrls[0]} target="_blank">
-              <img src={wikiLogo} alt="link to Wikipedia" />
-            </a>
-          </li>
-          <li className="word-desc__link">
-            <a href={data[0]?.sourceUrls[1]} target="_blank">
-              <img src={wikiLogo} alt="link to Wikipedia" />
-            </a>
-          </li>
-        </ul>
+        <WordDescHeading data={data} />
 
         <Line1px />
 

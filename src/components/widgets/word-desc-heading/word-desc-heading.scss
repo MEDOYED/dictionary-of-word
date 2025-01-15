@@ -1,0 +1,22 @@
+.word-desc {
+  &__heading {
+    font-size: 20px;
+    font-style: italic;
+    padding-top: 25px;
+
+    &--bold {
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+
+  &__links {
+    display: flex;
+    margin-left: calc(100% - 125px);
+
+    .word-desc__link a img {
+      width: 65px;
+      padding-right: 15px;
+    }
+  }
+}
