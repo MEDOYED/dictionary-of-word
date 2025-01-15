@@ -15,8 +15,19 @@
     width: 15vw;
   }
 
-  h2 {
+  a {
     font-size: 3vw;
     text-wrap: nowrap;
+    background-color: #d1d1d134;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: #777 6px 6px 4px;
+    transition: all 0.05s;
+  }
+
+  a:hover {
+    box-shadow: #777 4px 4px 4px;
+    margin-top: 2px;
+    margin-left: 2px;
   }
 }
