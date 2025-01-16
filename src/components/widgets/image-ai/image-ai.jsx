@@ -33,7 +33,7 @@ const ImageAi = (props) => {
 
   return (
     <>
-      {images.length > 0 && (
+      {images.length > elemOfArr && (
         <img
           className="image-ai__img"
           key={images[elemOfArr].id}
