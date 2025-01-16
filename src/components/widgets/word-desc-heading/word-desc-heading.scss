@@ -12,7 +12,7 @@
 
   &__links {
     display: flex;
-    margin-left: calc(100% - 125px);
+    justify-content: flex-end;
 
     .word-desc__link a img {
       width: 65px;
