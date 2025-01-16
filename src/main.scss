@@ -4,7 +4,9 @@
 
 :root {
   --blue: #22b6b6;
-  --blue-02-op: rgb(34, 182, 182, 0.4);
+  --blue-02-op: rgba(34, 182, 182, 0.4);
+  $blue: var(--blue);
+  $blue-02-op: var(--blue-02-op);
 }
 
 /* =====  variables ============== */

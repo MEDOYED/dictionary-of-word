@@ -6,7 +6,7 @@ import App from "./components/app/App.jsx";
 import WordDescPage from "./components/pages/word-desc-page/word-desc-page.jsx";
 import HomePage from "./components/pages/home-page/home-page.jsx";
 
-import "./main.css";
+import "./main.scss";
 
 const root = document.getElementById("root");
 
