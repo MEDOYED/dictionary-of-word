@@ -9,14 +9,11 @@ const AudioPlayer = ({ data }) => {
     return null;
   }
 
-  return phoneticsArr.map((phonetic, i) => {
-    const audioLinkString = phonetic.audio || "";
-    const countryFromLink =
-      audioLinkString.match(/-(ca|uk|us|au)/)?.[1]?.toUpperCase() || "UNKNOWN";
+  return phoneticsArr.map((phonetic) => {
+    const audioSrc = phonetic.audio || "";
+    const countryFromLink = audioSrc.match(/-(ca|uk|us|au)/)?.[1].toUpperCase() || "UNKNOWN";
 
-    if (!audioLinkString) return null;
-
-    const audioSrc = data[0]?.phonetics?.[i]?.audio || "";
+    if (!audioSrc) return null;
 
     const playAudio = () => {
       const audio = new Audio(audioSrc);
@@ -29,7 +26,7 @@ const AudioPlayer = ({ data }) => {
         <button className="word-desc__player-btn" onClick={playAudio}>
           <img className="word-desc__player-icon" src={playIcon} alt="button listen audio" />
         </button>
-        <p className="word-desc__player-phonetic-text">{data[0]?.phonetics?.[i]?.text}</p>
+        <span className="word-desc__player-phonetic-text">{phonetic.text || "/unknown/"}</span>
       </div>
     );
   });
