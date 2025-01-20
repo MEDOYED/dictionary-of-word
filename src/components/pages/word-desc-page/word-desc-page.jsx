@@ -69,17 +69,16 @@ const WordDescPage = () => {
 
           <SynonymsList data={data} meaningsNum={0} />
 
-          <h2 className="more-examples">More examples:</h2>
+          <h2 className="more-examples">More defenition:</h2>
           <ul className="more-definitions">
-            <li className="word-desc__more-definitions-item">
-              {data[0]?.meanings[0]?.definitions[1]?.definition}
-            </li>
-            <li className="word-desc__more-definitions-item">
-              {data[0]?.meanings[0]?.definitions[2]?.definition}
-            </li>
-            <li className="word-desc__more-definitions-item">
-              {data[0]?.meanings[0]?.definitions[3]?.definition}
-            </li>
+            {data[0]?.meanings[0]?.definitions.map(
+              (elem, i) =>
+                i < 4 && (
+                  <li key={i} className="word-desc__more-definitions-item">
+                    - {elem.definition}
+                  </li>
+                )
+            )}
           </ul>
         </section>
 
