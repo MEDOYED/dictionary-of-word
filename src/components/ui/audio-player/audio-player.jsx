@@ -9,7 +9,7 @@ const AudioPlayer = ({ data }) => {
     return null;
   }
 
-  return phoneticsArr.map((phonetic) => {
+  return phoneticsArr.map((phonetic, index) => {
     const audioSrc = phonetic.audio || "";
     const countryFromLink = audioSrc.match(/-(ca|uk|us|au)/)?.[1].toUpperCase() || "UNKNOWN";
 
@@ -21,7 +21,7 @@ const AudioPlayer = ({ data }) => {
     };
 
     return (
-      <div className="word-desc__player">
+      <div key={index} className="word-desc__player">
         <h2 className="word-desc__player-country">{countryFromLink}</h2>
         <button className="word-desc__player-btn" onClick={playAudio}>
           <img className="word-desc__player-icon" src={playIcon} alt="button listen audio" />

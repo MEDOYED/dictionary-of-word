@@ -83,46 +83,50 @@ const WordDescPage = () => {
           </ul>
         </section>
 
-        <BoldLine />
+        {data[0]?.meanings[1]?.definitions && (
+          <>
+            {" "}
+            <BoldLine />
+            <section>
+              <h2 className="title">{data[0]?.word}</h2>
+              <h2 className="part-of-spech">{data[0]?.meanings[1]?.partOfSpeech}</h2>
+              <ul className="audio-players">
+                <AudioPlayer data={data} />
+              </ul>
 
-        {/* ===================================================== */}
+              <div className="main-part">
+                <ImageAi word={word} data={data} elemOfArr={1} />
 
-        <section>
-          <h2 className="title">{data[0]?.word}</h2>
-          <h2 className="part-of-spech">{data[0]?.meanings[1]?.partOfSpeech}</h2>
-          <ul className="audio-players">
-            <AudioPlayer data={data} />
-          </ul>
-
-          <div className="main-part">
-            <ImageAi word={word} data={data} elemOfArr={1} />
-
-            <div className="wrapper">
-              <div className="definition">{data[0]?.meanings[1]?.definitions[0]?.definition}</div>
-              {data[0]?.meanings[1]?.definitions[0]?.example && (
-                <div className="example">
-                  <h2>For example:</h2>
-                  <p>- {data[0]?.meanings[1]?.definitions[0]?.example}</p>
+                <div className="wrapper">
+                  <div className="definition">
+                    {data[0]?.meanings[1]?.definitions[0]?.definition}
+                  </div>
+                  {data[0]?.meanings[1]?.definitions[0]?.example && (
+                    <div className="example">
+                      <h2>For example:</h2>
+                      <p>- {data[0]?.meanings[1]?.definitions[0]?.example}</p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </div>
+              </div>
 
-          <SynonymsList data={data} meaningsNum={1} />
+              <SynonymsList data={data} meaningsNum={1} />
 
-          <h2 className="more-examples">More examples:</h2>
-          <ul className="more-definitions">
-            <li className="word-desc__more-definitions-item">
-              {data[0]?.meanings[1]?.definitions[1]?.definition}
-            </li>
-            <li className="word-desc__more-definitions-item">
-              {data[0]?.meanings[1]?.definitions[2]?.definition}
-            </li>
-            <li className="word-desc__more-definitions-item">
-              {data[0]?.meanings[1]?.definitions[3]?.definition}
-            </li>
-          </ul>
-        </section>
+              <h2 className="more-examples">More examples:</h2>
+              <ul className="more-definitions">
+                <li className="word-desc__more-definitions-item">
+                  {data[0]?.meanings[1]?.definitions[1]?.definition}
+                </li>
+                <li className="word-desc__more-definitions-item">
+                  {data[0]?.meanings[1]?.definitions[2]?.definition}
+                </li>
+                <li className="word-desc__more-definitions-item">
+                  {data[0]?.meanings[1]?.definitions[3]?.definition}
+                </li>
+              </ul>
+            </section>
+          </>
+        )}
       </section>
     </>
   );
