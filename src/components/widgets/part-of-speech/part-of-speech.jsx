@@ -1,6 +1,7 @@
 import ImageAi from "../image-ai/image-ai";
 import AudioPlayer from "../../ui/audio-player/audio-player";
 import SynonymsList from "../synonims-list/synonyms-list";
+import HeadingPartOfSpeech from "../heading-part-of-speech/heading-part-of-speech";
 
 import "./part-of-speech.scss";
 
@@ -8,11 +9,7 @@ const PartOfSpeech = ({ data, word, elemOfArr }) => {
   return (
     <>
       <section className="part-of-speech__section">
-        <h2 className="title">{data[0]?.word}</h2>
-        <h2 className="part-of-spech">{data[0]?.meanings[elemOfArr]?.partOfSpeech}</h2>
-        <ul className="audio-players">
-          <AudioPlayer data={data} />
-        </ul>
+        <HeadingPartOfSpeech data={data} elemOfArr={elemOfArr} />
 
         <div className="main-part">
           <ImageAi word={word} data={data} elemOfArr={elemOfArr} />
