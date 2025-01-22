@@ -7,7 +7,7 @@ import "./part-of-speech.scss";
 const PartOfSpeech = ({ data, word, elemOfArr }) => {
   return (
     <>
-      <section>
+      <section className="part-of-speech__section">
         <h2 className="title">{data[0]?.word}</h2>
         <h2 className="part-of-spech">{data[0]?.meanings[elemOfArr]?.partOfSpeech}</h2>
         <ul className="audio-players">
