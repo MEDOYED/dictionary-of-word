@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import "./image-ai.scss";
 
 const API_URL = "https://api.unsplash.com/search/photos";
-const IMAGES_PER_PAGE = 2;
 
-const ImageAi = (props) => {
-  const { word, elemOfArr } = props;
+const ImageAi = ({ data, word, elemOfArr }) => {
+  const IMAGES_PER_PAGE = data[0].meanings.length;
+
   const [images, setImages] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -31,6 +31,7 @@ const ImageAi = (props) => {
     }
   }, [word]);
 
+  console.log(data[0].meanings.length);
   return (
     <>
       {images.length > elemOfArr && (
