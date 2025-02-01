@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import "./synonyms-list.css";
+import "./synonyms-list.scss";
 
 const SynonymsList = ({ data, meaningsNum }) => {
   const titleRef = useRef(null);
