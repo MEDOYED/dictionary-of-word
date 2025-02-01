@@ -43,10 +43,12 @@ const WordDescPage = () => {
 
         <Line1px />
 
-        <PartOfSpeech data={data} word={word} elemOfArr={0} />
-        <PartOfSpeech data={data} word={word} elemOfArr={1} />
-        <PartOfSpeech data={data} word={word} elemOfArr={2} />
-        <PartOfSpeech data={data} word={word} elemOfArr={3} />
+        {[0, 1, 2, 3].map((index) => {
+          if (data[0].meanings.length > index) {
+            return <PartOfSpeech data={data} word={word} elemOfArr={index} />;
+          }
+          return null;
+        })}
       </section>
     </>
   );
