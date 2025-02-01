@@ -40,16 +40,16 @@ const SynonymsList = ({ data, meaningsNum }) => {
         {data[0]?.meanings[meaningsNum]?.synonyms[0] && (
           <li className="word-desc__synonyms-item">- {basicPath?.synonyms[0]}</li>
         )}
-        {data[0]?.meanings[meaningsNum]?.synonyms[1] && (
+        {basicPath?.synonyms[1] && (
           <li className="word-desc__synonyms-item">- {basicPath?.synonyms[1]}</li>
         )}
-        {data[0]?.meanings[meaningsNum]?.synonyms[2] && (
+        {basicPath?.synonyms[2] && (
           <li className="word-desc__synonyms-item">- {basicPath?.synonyms[2]}</li>
         )}
-        {data[0]?.meanings[meaningsNum]?.synonyms[3] && (
+        {basicPath?.synonyms[3] && (
           <li className="word-desc__synonyms-item">- {basicPath?.synonyms[3]}</li>
         )}
-        {data[0]?.meanings[meaningsNum]?.synonyms[4] && (
+        {basicPath?.synonyms[4] && (
           <li className="word-desc__synonyms-item">- {basicPath?.synonyms[4]}</li>
         )}
       </ul>
