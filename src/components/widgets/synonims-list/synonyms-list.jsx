@@ -22,9 +22,11 @@ const SynonymsList = ({ data, meaningsNum }) => {
     }
   };
 
+  const basicPath = data[0]?.meanings[meaningsNum];
+
   return (
     <>
-      {data[0]?.meanings[meaningsNum]?.synonyms[0] && (
+      {basicPath?.synonyms[0] && (
         <div
           className="word-desc__synonyms-title"
           data-tab="tab-1"
@@ -36,29 +38,19 @@ const SynonymsList = ({ data, meaningsNum }) => {
       )}
       <ul className="word-desc__synonyms-list" ref={listRef} id="tab-1">
         {data[0]?.meanings[meaningsNum]?.synonyms[0] && (
-          <li className="word-desc__synonyms-item">
-            - {data[0]?.meanings[meaningsNum]?.synonyms[0]}
-          </li>
+          <li className="word-desc__synonyms-item">- {basicPath?.synonyms[0]}</li>
         )}
         {data[0]?.meanings[meaningsNum]?.synonyms[1] && (
-          <li className="word-desc__synonyms-item">
-            - {data[0]?.meanings[meaningsNum]?.synonyms[1]}
-          </li>
+          <li className="word-desc__synonyms-item">- {basicPath?.synonyms[1]}</li>
         )}
         {data[0]?.meanings[meaningsNum]?.synonyms[2] && (
-          <li className="word-desc__synonyms-item">
-            - {data[0]?.meanings[meaningsNum]?.synonyms[2]}
-          </li>
+          <li className="word-desc__synonyms-item">- {basicPath?.synonyms[2]}</li>
         )}
         {data[0]?.meanings[meaningsNum]?.synonyms[3] && (
-          <li className="word-desc__synonyms-item">
-            - {data[0]?.meanings[meaningsNum]?.synonyms[3]}
-          </li>
+          <li className="word-desc__synonyms-item">- {basicPath?.synonyms[3]}</li>
         )}
         {data[0]?.meanings[meaningsNum]?.synonyms[4] && (
-          <li className="word-desc__synonyms-item">
-            - {data[0]?.meanings[meaningsNum]?.synonyms[4]}
-          </li>
+          <li className="word-desc__synonyms-item">- {basicPath?.synonyms[4]}</li>
         )}
       </ul>
     </>
